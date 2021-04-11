@@ -104,8 +104,8 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3 class="primary-color">LOGIN FORM</h3>
-                    <p style="color: gray">Login to your account to continue.</p>
+                    <h3 class="primary-color">CLIENT’ REGISTRATION FORM</h3>
+                    <p style="color: gray">Create your account to begin your registration</p>
 
                     <form onsubmit="submitPage(event)">
                     <div class="pane" id="pane-one">
@@ -115,12 +115,37 @@
                     </div>
 
                     <div class="mt-2">
+                        <label for="email" style="color: gray">Email</label>
+                        <input type="email" id="email" class="form-control py-2" name="email" placeholder="Email" />
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="age" style="color: gray">Age</label>
+                        <input type="number" id="age" class="form-control py-2" name="age" placeholder="Age" />
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="phone-number" style="color: gray">Phone number</label>
+                        <input type="number" id="phone-number" class="form-control py-2" name="phone_number" placeholder="Phone number" />
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="sex" style="color: gray">Sex</label>
+                       <select class="form-control" name="sex">
+                           <option value="">---Sex---</option>
+                           <option value="male">Male</option>
+                           <option value="female">Female</option>
+                           <option value="others">Others</option>
+                       </select>
+                    </div>
+
+                    <div class="mt-2">
                         <label for="password" style="color: gray">Password</label>
                         <input type="password" id="password" class="form-control py-2" name="phone_number" placeholder="Password" />
                     </div>
                     <br />
                     <br />
-                    <button type="submit" class="btn classic-btn col-lg-12 py-1">Login</button>
+                    <button type="submit" class="btn classic-btn col-lg-12 py-1">Sign Up</button>
                     <br />
                     <br />
                     </div>
@@ -132,15 +157,14 @@
                     </div>
 
                     <div class="pb-2">
-                        <p>Don't have an account? Sign up as a <a href="lawyer/client-register.html">Customer</a> or <a href="lawyer/register.html">Lawyer</a></p>
-                        <p><a href="">Forgot password</a></p>
+                        <p>Are you a customer? <a href="lawyer/login.html">Login</a></p>
                     </div>
 
                     </div>
 
                     
                 <div class="col-lg-6">
-                    <img class="mt-5" id="display-image" style="margin-top: 18px" src="./lawyer-sign.png" />
+                    <img class="mt-5" id="display-image" style="margin-top: 88px" src="./lawyer-sign.png" />
                 </div>
             </div>
         </div>

@@ -78,6 +78,10 @@
             display: none;
         }
 
+        .hide {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             #display-image {
                 display: none;
@@ -104,40 +108,42 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3 class="primary-color">LAWYERS’ REGISTRATION FORM</h3>
-                    <p style="color: gray">Create your account to begin your registration</p>
+                    <h3 class="primary-color">PAYMENT INSTRUCTION FORM</h3>
 
                     <form onsubmit="submitPage(event)">
                     <div class="pane" id="pane-one">
                     <h2 style="color: gray">1 - 4</h2>
+                    
+                    <p style="color: gray">
+                        Are you registered: Yes/No (If No, register)
+                    </p>
+                    <p style="color: gray">
+                        If yes state your Registration Number:
+                    </p>
                     <div class="mt-2">
-                        <label for="name" style="color: gray">Name</label>
-                        <input type="text" id="name" class="form-control py-2" name="name" placeholder="Name" />
+                        <input type="number" id="reg-number" class="form-control py-2" name="reg_number" placeholder="Reg number" />
                     </div>
 
                     <div class="mt-2">
-                        <label for="age" style="color: gray">Age</label>
-                        <input type="number" id="age" class="form-control py-2" name="age" placeholder="Age" />
+                        <label for="names" style="color: gray">State your names</label>
+                        <input type="text" id="names" class="form-control py-2" name="age" placeholder="State your names" />
                     </div>
 
                     <div class="mt-2">
-                        <label for="sex" style="color: gray">Sex</label>
-                       <select class="form-control" name="sex">
-                           <option value="">---Sex---</option>
-                           <option value="male">Male</option>
-                           <option value="female">Female</option>
-                           <option value="others">Others</option>
-                       </select>
+                        <label for="amount" style="color: gray">Amount you want to Deposit in Our Account: (state figure and currency</label>
+                        <input type="number" id="amount" class="form-control py-2" name="amount" placeholder="Amount you want to Deposit in Our Account: (state figure and currency)" />
                     </div>
 
                     <div class="mt-2">
-                        <label for="name-of-law-firm" style="color: gray">NAME OF LAW FIRM</label>
-                        <input type="text" id="name-of-law-firm" class="form-control py-2" name="phone_number" placeholder="Name of law firm" />
+                        <label for="amount-to-pay" style="color: gray">Amount to pay recipient: (State figure and currency)</label>
+                        <input type="number" id="amount-to-pay" class="form-control py-2" name="amount_to_pay" placeholder="Amount to pay recipient: (State figure and currency)" />
+                        (If currency is different from currency paid exchange rate on the day apply)
                     </div>
 
                     <div class="mt-2">
-                        <label for="town" style="color: gray">Town</label>
-                        <input type="text" id="town" class="form-control py-2" name="town" placeholder="Town" />
+                        <label for="email" style="color: gray">Email</label>
+                        <input type="number" id="amount-to-pay" class="form-control py-2" name="amount_to_pay" placeholder="Amount to pay recipient: (State figure and currency)" />
+                        (If currency is different from currency paid exchange rate on the day apply)
                     </div>
                     <button onclick="next(2)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Next</button>
                     <br />
@@ -147,21 +153,27 @@
 
                     <div class="pane hide-pane" id="pane-two">
                         <h2 style="color: gray">2 - 4</h2>
+                        
+                        <h4>Details of recipient</h4>
+
                         <div class="mt-2">
-                            <label for="city" style="color: gray">City</label>
-                            <input type="text" id="city" class="form-control py-2" name="city" placeholder="City" />
+                            <label for="name" style="color: gray">Name</label>
+                            <input type="text" id="name" class="form-control py-2" name="name" placeholder="Name" />
                         </div>
+                        
+                        <div class="mt-2">
+                            <label for="Address" style="color: gray">Address</label>
+                            <input type="text" id="address" class="form-control py-2" name="address" placeholder="Address" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="town" style="color: gray">Town</label>
+                            <input type="text" id="town" class="form-control py-2" name="town" placeholder="Town" />
+                        </div>
+
                         <div class="mt-2">
                             <label for="country" style="color: gray">Country</label>
-                            <input type="text" id="country" class="form-control py-2" name="country" placeholder="Country" />
-                        </div>
-                        <div class="mt-2">
-                            <label for="country-of-call-to-bar" style="color: gray">Country of call to bar</label>
-                            <input type="text" id="country-of-call-to-bar" class="form-control py-2" name="country_of_call_to_bar" placeholder="Country of call to bar" />
-                        </div>
-                        <div class="mt-2">
-                            <label for="call-to-bar-enrolment-number" style="color: gray">Country of call to bar</label>
-                            <input type="text" id="call-to-bar-enrolment-number" class="form-control py-2" name="call_to_bar_enrolment_number" placeholder="Call to bar enrolment number" />
+                            <input type="email" id="country" class="form-control py-2" name="country" placeholder="Country" />
                         </div>
                         
                         <button onclick="next(1)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
@@ -172,26 +184,44 @@
 
                     <div class="pane hide-pane" id="pane-three">
                         <h2 style="color: gray">3 - 4</h2>
+
                         <div class="mt-2">
-                            <label for="year-of-call-enrolment" style="color: gray">Year of call enrolment</label>
-                            <input type="text" id="year-of-call-enrolment" class="form-control py-2" name="year_of_call_enrolment" placeholder="Call to bar enrolment number" />
+                            <select class="form-control mt-2" name="price">
+                                <option value="">---Sex---</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
+
                         <div class="mt-2">
                             <label for="phone-number" style="color: gray">Phone number</label>
                             <input type="number" id="phone-number" class="form-control py-2" name="phone_number" placeholder="Phone number" />
                         </div>
+
                         <div class="mt-2">
-                            <label for="email" style="color: gray">Email</label>
-                            <input type="text" id="email" class="form-control py-2" name="email" placeholder="Email" />
+                            <label for="email" style="color: gray">Phone number</label>
+                            <input type="email" id="email" class="form-control py-2" name="email" placeholder="Email" />
                         </div>
+
                         <div class="mt-2">
-                            <label for="sex" style="color: gray">Practice Areas</label>
-                            <select class="form-control" name="sex">
-                                <option value="">---Practice Areas---</option>
-                                <option value="option_one">Option one</option>
-                                <option value="option_two">Option two</option>
-                                <option value="option_three">Options three</option>
-                            </select>
+                            <label for="name-of-company" style="color: gray">Name of company</label>
+                            <input type="email" id="name-of-company" class="form-control py-2" name="name_of_company" placeholder="Name of company" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="account-details" style="color: gray">Account Details of company or Recipient</label>
+                            <input type="text" id="account-details" class="form-control py-2" name="account_details" placeholder="Account details of company or recipient" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="date-of-payment" style="color: gray">Date you want payment to be made</label>
+                            <input type="date" id="date-of-payment" class="col-lg-12" name="date_of_payment">
+                        </div>
+
+                        <div class="mt-5">
+                            <label for="purpose-of-payment" style="color: gray">Purpose of payment</label>
+                            <input type="email" id="purpose-of-payment" class="form-control py-2" name="purpose_of_payment" placeholder="Purpose of payment" />
                         </div>
 
                         <button onclick="next(2)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
@@ -202,41 +232,33 @@
 
                     <div class="pane hide-pane" id="pane-four">
                         <h2 style="color: gray">4 - 4</h2>
+                        
                         <div class="mt-2">
-                            <input type="checkbox" name="term_and_conditions" />
-                            <p>Click to accept terms</p>
-                            <p>
-                                agree to Allways Legal Limited Terms. I mandate Allways Legal Limited to receive <br />
-                                payment for my service and to retain 20 percent as their service fees.                                
-                            </p>
+                           <label for="account-name" style="color: gray">
+                            Allways Legal Account Details: (If payment is made manually upload proof of payment)
+                           </label>
+                           <input type="text" id="account-name" class="form-control" name="account_name" placeholder="Account name">
                         </div>
+
                         <div class="mt-2">
-                            <p>Date</p>
-                            <input type="date" />
-                        </div>
+                            <label for="account-number" style="color: gray">
+                                Account Number
+                            </label>
+                            <input type="number" id="account-number" class="form-control" name="account_number" placeholder="Account number">
+                         </div>
+
                         <div class="mt-2 pb-5">
                             <button onclick="next(3)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
                             <br />
                             <br />
-                            <button type="submit" class="btn classic-btn col-lg-12 py-1">Sign Up</button>
+                            <button type="submit" class="btn classic-btn col-lg-12 py-1">Send</button>
                         </div>
                         </form>
-
-                    <div class="mt-2 pb-2">
-                        By clicking signup, I authorize Goodlawyer Inc. to contact me by email/phone/SMS and I <br />
-                        accept the Goodlawyer Terms of Use and Privacy Policy
                     </div>
 
-                    <div class="pb-2">
-                        <p>Already have an account? <a href="lawyer/login.html">Login</a></p>
-                    </div>
-
-                    </div>
-
-                    
                 </div>
                 <div class="col-lg-6">
-                    <img class="mt-5" id="display-image" style="margin-top: 28px" src="./lawyer-sign.png" />
+                    <img class="mt-5" id="display-image" style="margin-top: 28px" src="./money-sign.png" />
                 </div>
             </div>
         </div>
@@ -268,9 +290,13 @@
                 }
             }
 
-            const submitPage = event => {
-                event.preventDefault();
-                window.location.href = 'file:///C:/Users/williams/Desktop/Tech-docs/allways-legal-UI/lawyer/registration-lawyer-successful.html'
+            const hideShow = bool => {
+                const lawyerPriceList = document.querySelector('#laywer-price-list');
+                if(bool) {
+                    lawyerPriceList.className = ""
+                } else {
+                    lawyerPriceList.className = "hide" 
+                }
             }
         </script>
     </body>
