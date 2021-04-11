@@ -78,6 +78,10 @@
             display: none;
         }
 
+        .hide {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             #display-image {
                 display: none;
@@ -104,7 +108,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3 class="primary-color">LAWYERS’ REGISTRATION FORM</h3>
+                    <h3 class="primary-color">CLIENTS’ MATTER FORM</h3>
                     <p style="color: gray">Create your account to begin your registration</p>
 
                     <form onsubmit="submitPage(event)">
@@ -116,28 +120,18 @@
                     </div>
 
                     <div class="mt-2">
-                        <label for="age" style="color: gray">Age</label>
-                        <input type="number" id="age" class="form-control py-2" name="age" placeholder="Age" />
-                    </div>
-
-                    <div class="mt-2">
-                        <label for="sex" style="color: gray">Sex</label>
-                       <select class="form-control" name="sex">
-                           <option value="">---Sex---</option>
-                           <option value="male">Male</option>
-                           <option value="female">Female</option>
-                           <option value="others">Others</option>
-                       </select>
-                    </div>
-
-                    <div class="mt-2">
-                        <label for="name-of-law-firm" style="color: gray">NAME OF LAW FIRM</label>
-                        <input type="text" id="name-of-law-firm" class="form-control py-2" name="phone_number" placeholder="Name of law firm" />
+                        <label for="address" style="color: gray">Address</label>
+                        <input type="text" id="address" class="form-control py-2" name="address" placeholder="Address" />
                     </div>
 
                     <div class="mt-2">
                         <label for="town" style="color: gray">Town</label>
                         <input type="text" id="town" class="form-control py-2" name="town" placeholder="Town" />
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="city" style="color: gray">City</label>
+                        <input type="city" id="city" class="form-control py-2" name="city" placeholder="City" />
                     </div>
                     <button onclick="next(2)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Next</button>
                     <br />
@@ -148,20 +142,19 @@
                     <div class="pane hide-pane" id="pane-two">
                         <h2 style="color: gray">2 - 4</h2>
                         <div class="mt-2">
-                            <label for="city" style="color: gray">City</label>
-                            <input type="text" id="city" class="form-control py-2" name="city" placeholder="City" />
-                        </div>
-                        <div class="mt-2">
                             <label for="country" style="color: gray">Country</label>
                             <input type="text" id="country" class="form-control py-2" name="country" placeholder="Country" />
                         </div>
-                        <div class="mt-2">
-                            <label for="country-of-call-to-bar" style="color: gray">Country of call to bar</label>
-                            <input type="text" id="country-of-call-to-bar" class="form-control py-2" name="country_of_call_to_bar" placeholder="Country of call to bar" />
-                        </div>
+                        
                         <div class="mt-2">
                             <label for="call-to-bar-enrolment-number" style="color: gray">Country of call to bar</label>
-                            <input type="text" id="call-to-bar-enrolment-number" class="form-control py-2" name="call_to_bar_enrolment_number" placeholder="Call to bar enrolment number" />
+                            <input class="col-lg-12" type="date" name="date_of_birth" />
+                        </div>
+
+
+                        <div class="mt-5">
+                            <label for="email" style="color: gray">Email</label>
+                            <input type="text" id="email" class="form-control py-2" name="email" placeholder="Email" />
                         </div>
                         
                         <button onclick="next(1)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
@@ -172,26 +165,45 @@
 
                     <div class="pane hide-pane" id="pane-three">
                         <h2 style="color: gray">3 - 4</h2>
-                        <div class="mt-2">
-                            <label for="year-of-call-enrolment" style="color: gray">Year of call enrolment</label>
-                            <input type="text" id="year-of-call-enrolment" class="form-control py-2" name="year_of_call_enrolment" placeholder="Call to bar enrolment number" />
+
+                        <p class="font-weight-bold">SUMMARY OF CASE:</p>
+                        <p>Do you need an appointment with a lawyer?</p>
+
+                        <div style="cursor: pointer" class="d-flex">
+                            <span>Yes</span>
+                            <input class="mt-2" type="radio" name="option_select" value="yes" onclick="hideShow(true)" />
+                            <span>No</span>
+                            <input class="mt-2" type="radio" name="option_select" checked value="no"  onclick="hideShow(false)"/>
                         </div>
-                        <div class="mt-2">
-                            <label for="phone-number" style="color: gray">Phone number</label>
-                            <input type="number" id="phone-number" class="form-control py-2" name="phone_number" placeholder="Phone number" />
-                        </div>
-                        <div class="mt-2">
-                            <label for="email" style="color: gray">Email</label>
-                            <input type="text" id="email" class="form-control py-2" name="email" placeholder="Email" />
-                        </div>
-                        <div class="mt-2">
-                            <label for="sex" style="color: gray">Practice Areas</label>
-                            <select class="form-control" name="sex">
-                                <option value="">---Practice Areas---</option>
-                                <option value="option_one">Option one</option>
-                                <option value="option_two">Option two</option>
-                                <option value="option_three">Options three</option>
+
+                        <div class="hide" id="laywer-price-list">
+                            <select class="form-control mt-2" name="price">
+                                <option value="">---Lawyers's fees---</option>
+                                <option value="mins_30">30 mins -  $50</option>
+                                <option value="hour_1">1 hour - $100</option>
+                                <option value="uk_mins_30">30 mins (UK) - £50</option>
+                                <option value="uk_1_hour">1 hour  (UK) - £100</option>
                             </select>
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="zoom" style="color: gray">Zoom</label>
+                            <input type="text" id="zoom" class="form-control py-2" name="zoom" placeholder="Zoom" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="skype" style="color: gray">Skype</label>
+                            <input type="text" id="skype" class="form-control py-2" name="skype" placeholder="Skype" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="whatsapp" style="color: gray">Whatsapp</label>
+                            <input type="number" id="zoom" class="form-control py-2" name="whatsapp" placeholder="Whatsapp" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="other" style="color: gray">Other ?, please specify</label>
+                            <input type="any" id="other" class="form-control py-2" name="other" placeholder="Other" />
                         </div>
 
                         <button onclick="next(2)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
@@ -203,34 +215,56 @@
                     <div class="pane hide-pane" id="pane-four">
                         <h2 style="color: gray">4 - 4</h2>
                         <div class="mt-2">
-                            <input type="checkbox" name="term_and_conditions" />
-                            <p>Click to accept terms</p>
-                            <p>
-                                agree to Allways Legal Limited Terms. I mandate Allways Legal Limited to receive <br />
-                                payment for my service and to retain 20 percent as their service fees.                                
-                            </p>
+                            <label for="result" style="color: gray">Result you seek/What you want to know</label>
+                            <input type="text" id="result" class="form-control py-2" name="result" placeholder="Result" />
                         </div>
+
                         <div class="mt-2">
-                            <p>Date</p>
-                            <input type="date" />
+                            <p>Is your matter urgent?</p>
+                            <div style="cursor: pointer" class="d-flex">
+                                <span>Yes</span>
+                                <input class="mt-2" type="radio" name="urgency" value="yes" />
+                                <span>No</span>
+                                <input class="mt-2" type="radio" name="urgency" value="no" />
+                            </div>
+
+                            <div class="mt-2">
+                                <label for="urgent" style="color: gray">Please state the way you want that it's urgent</label>
+                                <input type="text" id="urgent" class="form-control py-2" name="urgent" placeholder="Please state the way you want that it's urgent" />
+                            </div>
+
+                            <div class="mt-2">
+                                <label for="upload" style="color: gray">Upload document</label>
+                                <input type="file" id="upload" class="form-control" name="upload" />
+                            </div>
+
+                            <div class="mt-2">
+                                <label for="number-of-pages" style="color: gray">What are the number of pages</label>
+                                <p>
+                                    perusing each page costs $5 for admin 
+                                    and $10 for lawyers). Admin flat fee is $50 for an hour and half without additional 
+                                    charge. After 1 hour and half each admin hour is $25
+                                </p>
+                                <input type="number" id="number-of-pages" class="form-control py-2" name="number_of_pages" placeholder="Please state the way you want that it's urgent" />
+                            </div>
+
+                            <div class="mt-2">
+                                <p>
+                                    There will be a not to say that if it will cost more to read the papers you will be 
+                                    told before the cost is incurred. 
+                                </p>
+
+                                <input type="date" name="cost" class="col-lg-12">
+                            </div>
+
                         </div>
                         <div class="mt-2 pb-5">
                             <button onclick="next(3)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
                             <br />
                             <br />
-                            <button type="submit" class="btn classic-btn col-lg-12 py-1">Sign Up</button>
+                            <button type="submit" class="btn classic-btn col-lg-12 py-1">Submit</button>
                         </div>
                         </form>
-
-                    <div class="mt-2 pb-2">
-                        By clicking signup, I authorize Goodlawyer Inc. to contact me by email/phone/SMS and I <br />
-                        accept the Goodlawyer Terms of Use and Privacy Policy
-                    </div>
-
-                    <div class="pb-2">
-                        <p>Already have an account? <a href="lawyer/login.html">Login</a></p>
-                    </div>
-
                     </div>
 
                     
@@ -268,9 +302,13 @@
                 }
             }
 
-            const submitPage = event => {
-                event.preventDefault();
-                window.location.href = 'file:///C:/Users/williams/Desktop/Tech-docs/allways-legal-UI/lawyer/registration-lawyer-successful.html'
+            const hideShow = bool => {
+                const lawyerPriceList = document.querySelector('#laywer-price-list');
+                if(bool) {
+                    lawyerPriceList.className = ""
+                } else {
+                    lawyerPriceList.className = "hide" 
+                }
             }
         </script>
     </body>

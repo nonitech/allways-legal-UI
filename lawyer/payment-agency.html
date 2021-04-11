@@ -78,6 +78,10 @@
             display: none;
         }
 
+        .hide {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             #display-image {
                 display: none;
@@ -104,12 +108,19 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3 class="primary-color">LAWYERS’ REGISTRATION FORM</h3>
-                    <p style="color: gray">Create your account to begin your registration</p>
+                    <h3 class="primary-color">PAYMENT AGENCY</h3>
+                    <p style="color: gray">
+                        Complete the Payment Instruction Registration form and Upload your Identity Document
+                    </p>
+                    <p style="color: gray">
+                        Payment Instruction Registration Form
+                    </p>
 
                     <form onsubmit="submitPage(event)">
                     <div class="pane" id="pane-one">
                     <h2 style="color: gray">1 - 4</h2>
+                    
+                    Details of Person Paying<br />
                     <div class="mt-2">
                         <label for="name" style="color: gray">Name</label>
                         <input type="text" id="name" class="form-control py-2" name="name" placeholder="Name" />
@@ -120,24 +131,23 @@
                         <input type="number" id="age" class="form-control py-2" name="age" placeholder="Age" />
                     </div>
 
-                    <div class="mt-2">
-                        <label for="sex" style="color: gray">Sex</label>
-                       <select class="form-control" name="sex">
-                           <option value="">---Sex---</option>
-                           <option value="male">Male</option>
-                           <option value="female">Female</option>
-                           <option value="others">Others</option>
-                       </select>
+                    <div class="mt-5">
+                        <select class="form-control" name="sex">
+                            <option value="">---Sex---</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
 
                     <div class="mt-2">
-                        <label for="name-of-law-firm" style="color: gray">NAME OF LAW FIRM</label>
-                        <input type="text" id="name-of-law-firm" class="form-control py-2" name="phone_number" placeholder="Name of law firm" />
+                        <label for="address" style="color: gray">Address</label>
+                        <input type="text" id="address" class="form-control py-2" name="address" placeholder="Address" />
                     </div>
 
                     <div class="mt-2">
-                        <label for="town" style="color: gray">Town</label>
-                        <input type="text" id="town" class="form-control py-2" name="town" placeholder="Town" />
+                        <label for="city" style="color: gray">City</label>
+                        <input type="city" id="city" class="form-control py-2" name="city" placeholder="City" />
                     </div>
                     <button onclick="next(2)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Next</button>
                     <br />
@@ -148,20 +158,23 @@
                     <div class="pane hide-pane" id="pane-two">
                         <h2 style="color: gray">2 - 4</h2>
                         <div class="mt-2">
-                            <label for="city" style="color: gray">City</label>
-                            <input type="text" id="city" class="form-control py-2" name="city" placeholder="City" />
-                        </div>
-                        <div class="mt-2">
                             <label for="country" style="color: gray">Country</label>
                             <input type="text" id="country" class="form-control py-2" name="country" placeholder="Country" />
                         </div>
-                        <div class="mt-2">
-                            <label for="country-of-call-to-bar" style="color: gray">Country of call to bar</label>
-                            <input type="text" id="country-of-call-to-bar" class="form-control py-2" name="country_of_call_to_bar" placeholder="Country of call to bar" />
-                        </div>
+                        
                         <div class="mt-2">
                             <label for="call-to-bar-enrolment-number" style="color: gray">Country of call to bar</label>
-                            <input type="text" id="call-to-bar-enrolment-number" class="form-control py-2" name="call_to_bar_enrolment_number" placeholder="Call to bar enrolment number" />
+                            <input class="col-lg-12" type="date" name="date_of_birth" />
+                        </div>
+
+                        <div class="mt-5">
+                            <label for="phone-number" style="color: gray">Phone</label>
+                            <input type="number" id="phone-number" class="form-control py-2" name="phone_number" placeholder="Phone number" />
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="email" style="color: gray">Email</label>
+                            <input type="text" id="email" class="form-control py-2" name="email" placeholder="Email" />
                         </div>
                         
                         <button onclick="next(1)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
@@ -172,26 +185,31 @@
 
                     <div class="pane hide-pane" id="pane-three">
                         <h2 style="color: gray">3 - 4</h2>
+
                         <div class="mt-2">
-                            <label for="year-of-call-enrolment" style="color: gray">Year of call enrolment</label>
-                            <input type="text" id="year-of-call-enrolment" class="form-control py-2" name="year_of_call_enrolment" placeholder="Call to bar enrolment number" />
+                            <label for="company-name" style="color: gray">Company name</label>
+                            <input type="text" id="company-name" class="form-control py-2" name="company_name" placeholder="Company name" />
                         </div>
+
                         <div class="mt-2">
-                            <label for="phone-number" style="color: gray">Phone number</label>
-                            <input type="number" id="phone-number" class="form-control py-2" name="phone_number" placeholder="Phone number" />
+                            <label for="company-address" style="color: gray">Company Address</label>
+                            <input type="text" id="company-address" class="form-control py-2" name="company_address" placeholder="Company Address" />
                         </div>
+
                         <div class="mt-2">
-                            <label for="email" style="color: gray">Email</label>
-                            <input type="text" id="email" class="form-control py-2" name="email" placeholder="Email" />
+                            <label for="" style="color: gray">What ID document and Proof of address do you have? (please tick)</label>
+                            <input type="checkbox" />
                         </div>
+
                         <div class="mt-2">
-                            <label for="sex" style="color: gray">Practice Areas</label>
-                            <select class="form-control" name="sex">
-                                <option value="">---Practice Areas---</option>
-                                <option value="option_one">Option one</option>
-                                <option value="option_two">Option two</option>
-                                <option value="option_three">Options three</option>
-                            </select>
+                            <label for="other" style="color: gray">Identification Documents</label>
+                            <br />
+                            Passport <br />
+                            <input type="file" name="passport" />
+                            Driver Licence <br />
+                            <input type="file" name="driver_licence" />
+                            National ID card <br />
+                            <input type="file" name="national_id_card" />
                         </div>
 
                         <button onclick="next(2)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
@@ -202,41 +220,54 @@
 
                     <div class="pane hide-pane" id="pane-four">
                         <h2 style="color: gray">4 - 4</h2>
+                        
                         <div class="mt-2">
-                            <input type="checkbox" name="term_and_conditions" />
+                            <label for="medical-card" style="color: gray">Medical Card</label>
+                           <input type="any" id="medical-card" class="form-control" name="medical_card">
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="bank-statement" style="color: gray">Bank Statement</label>
+                           <input type="text" id="bank-statement" class="form-control" name="bank_statement">
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="utility" style="color: gray">Utility bill like Electric bill and others</label>
+                           <input type="text" id="medical-card" class="form-control" name="medical_card">
+                        </div>
+
+                        <div class="mt-2">
+                            <label for="id" style="color: gray">Upload ID and Proof of Address</label>
+                           <input type="file" id="upload-id" class="form-control" name="upload_id">
+                        </div>
+
+                        <div class="mt-2">
+                            <input type="checkbox" name="terms" />
                             <p>Click to accept terms</p>
                             <p>
-                                agree to Allways Legal Limited Terms. I mandate Allways Legal Limited to receive <br />
-                                payment for my service and to retain 20 percent as their service fees.                                
+                                I agree to Allways Legal Limited Terms. I mandate Allways Legal Limited to receive 
+                                payment for my service and to retain 5 percent as their service fees and admin fees.
                             </p>
                         </div>
+
                         <div class="mt-2">
-                            <p>Date</p>
-                            <input type="date" />
+                            <label for="date-data">Date</label>
+                            <input type="date" name="date-data" class="col-lg-12" />
                         </div>
+
                         <div class="mt-2 pb-5">
                             <button onclick="next(3)" type="button" class="btn classic-btn mt-3 pb-5 py-1">Previous</button>
                             <br />
                             <br />
-                            <button type="submit" class="btn classic-btn col-lg-12 py-1">Sign Up</button>
+                            <button type="submit" class="btn classic-btn col-lg-12 py-1">Send</button>
                         </div>
                         </form>
-
-                    <div class="mt-2 pb-2">
-                        By clicking signup, I authorize Goodlawyer Inc. to contact me by email/phone/SMS and I <br />
-                        accept the Goodlawyer Terms of Use and Privacy Policy
-                    </div>
-
-                    <div class="pb-2">
-                        <p>Already have an account? <a href="lawyer/login.html">Login</a></p>
-                    </div>
-
                     </div>
 
                     
                 </div>
                 <div class="col-lg-6">
-                    <img class="mt-5" id="display-image" style="margin-top: 28px" src="./lawyer-sign.png" />
+                    <img class="mt-5" id="display-image" style="margin-top: 28px" src="./money-sign.png" />
                 </div>
             </div>
         </div>
@@ -268,9 +299,13 @@
                 }
             }
 
-            const submitPage = event => {
-                event.preventDefault();
-                window.location.href = 'file:///C:/Users/williams/Desktop/Tech-docs/allways-legal-UI/lawyer/registration-lawyer-successful.html'
+            const hideShow = bool => {
+                const lawyerPriceList = document.querySelector('#laywer-price-list');
+                if(bool) {
+                    lawyerPriceList.className = ""
+                } else {
+                    lawyerPriceList.className = "hide" 
+                }
             }
         </script>
     </body>

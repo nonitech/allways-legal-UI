@@ -78,70 +78,58 @@
             display: none;
         }
 
-        @media (max-width: 768px) {
-            #display-image {
-                display: none;
-            }
+        .heading {
+            font-size: 48px;
+            font-weight: bold;
+            color: gray;
+            text-align: center;
+            padding-top: 23px;
         }
 
-        @media (min-width: 769px) {
-            #display-image {
-                display: block;
-            }
+        .text {
+            font-size: 23px;
+            color: gray;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .classic-btn {
+            background: #06357a;
+            color: white;
+        }
+
+        .classic-btn:hover {
+            color: white;
+        }
+
+        .classic-btn:active, .classic-btn:focus {
+            color: white;
         }
     </style>
 
     <body>
-        <div class="space-left-right space-top-bottom" id="form-nav">
-            <div class="logo">
-                <a href="#">
-                    <img src="../assets/images/logo.png" alt="">
-                    <span style="font-size:24px; font-family:cursive"><strong>Allways-Legal</strong></span>
-                </a>
+        <div class="container">
+            <div class="heading">Congratulations</div>
+            <div class="mt-4">
+                <center><img src="./pngtree-checkmark-icon-green-color-png-image_1952984.jpg"></center>
             </div>
-        </div>
-
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="primary-color">LOGIN FORM</h3>
-                    <p style="color: gray">Login to your account to continue.</p>
-
-                    <form onsubmit="submitPage(event)">
-                    <div class="pane" id="pane-one">
-                    <div class="mt-2">
-                        <label for="name" style="color: gray">Name</label>
-                        <input type="text" id="name" class="form-control py-2" name="name" placeholder="Name" />
-                    </div>
-
-                    <div class="mt-2">
-                        <label for="password" style="color: gray">Password</label>
-                        <input type="password" id="password" class="form-control py-2" name="phone_number" placeholder="Password" />
-                    </div>
-                    <br />
-                    <br />
-                    <button type="submit" class="btn classic-btn col-lg-12 py-1">Login</button>
-                    <br />
-                    <br />
-                    </div>
-                    </form>
-
-                    <div class="mt-2 pb-2">
-                        By clicking signup, I authorize Goodlawyer Inc. to contact me by email/phone/SMS and I <br />
-                        accept the Goodlawyer Terms of Use and Privacy Policy
-                    </div>
-
-                    <div class="pb-2">
-                        <p>Don't have an account? Sign up as a <a href="lawyer/client-register.html">Customer</a> or <a href="lawyer/register.html">Lawyer</a></p>
-                        <p><a href="">Forgot password</a></p>
-                    </div>
-
-                    </div>
-
-                    
-                <div class="col-lg-6">
-                    <img class="mt-5" id="display-image" style="margin-top: 18px" src="./lawyer-sign.png" />
-                </div>
+            <div class="mt-4 text">
+                Dear Payee,
+                “Thank you for registering with Allways Legal Limited for payment instructions. 
+                Your payment instruction is being processed. We will contact you soon with further 
+                information including confirming payments as instructed
+                Kind regards
+                Allways Legal Limited
+            </div>
+            <div class="mt-4">
+                <center>
+                    <a href="file:///C:/Users/williams/Desktop/Tech-docs/allways-legal-UI/index.html">
+                        <button class="btn classic-btn">Go Home</button>
+                    </a>
+                </center>
+                <br />
+                <br />
+                <br />
             </div>
         </div>
     </body>
