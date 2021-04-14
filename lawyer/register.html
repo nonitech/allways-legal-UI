@@ -25,7 +25,7 @@
     
     <style>
         #form-nav {
-            box-shadow: 0 0 10px #c7c6c6;
+            box-shadow: none;
         }
 
         .space-top-bottom {
@@ -78,6 +78,12 @@
             display: none;
         }
 
+        #lawyer-profile-image {
+            width: 200px;
+            border-radius: 50%;
+            height: 200px;
+        }
+
         @media (max-width: 768px) {
             #display-image {
                 display: none;
@@ -86,6 +92,12 @@
 
         @media (min-width: 769px) {
             #display-image {
+                display: block;
+            }
+            #form-nav {
+                box-shadow: 0 0 10px #c7c6c6;
+            }
+            .logo {
                 display: block;
             }
         }
@@ -202,6 +214,25 @@
 
                     <div class="pane hide-pane" id="pane-four">
                         <h2 style="color: gray">4 - 4</h2>
+                        <div class="mt-4">
+                            <label>
+                                <img 
+                                    src="./avater.jpg" 
+                                    id="lawyer-profile-image"
+                                    style="cursor: pointer"
+                                    title="Select an image"
+                                />
+                                <input 
+                                    style="display: none" 
+                                    type="file" 
+                                    name="lawyer_profile_image"
+                                    onchange="handleUploadImage(event)"
+                                />
+                                <div class="mt-4">
+                                    <h4 style="color: gray">Upload your profile image</h4>
+                                </div>
+                            </label>
+                        </div>
                         <div class="mt-2">
                             <input type="checkbox" name="term_and_conditions" />
                             <p>Click to accept terms</p>
@@ -271,6 +302,12 @@
             const submitPage = event => {
                 event.preventDefault();
                 window.location.href = 'file:///C:/Users/williams/Desktop/Tech-docs/allways-legal-UI/lawyer/registration-lawyer-successful.html'
+            }
+
+            const handleUploadImage = event => {
+                const profileImageDisplay = document.querySelector('#lawyer-profile-image')
+                const selectedImage = event.target.files[0];
+                profileImageDisplay.src = URL.createObjectURL(selectedImage);
             }
         </script>
     </body>
