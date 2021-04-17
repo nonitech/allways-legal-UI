@@ -24,10 +24,15 @@
     <link rel="icon" type="image/png" href="../assets/images/1533970223logo_iHu_icon.ico">
     
     <style>
+
         #form-nav {
-            box-shadow: 0 0 10px #c7c6c6;
+            box-shadow: none;
         }
 
+        .logo {
+            display: none;
+        }
+       
         .space-top-bottom {
             padding-top: 10px;
             padding-bottom: 10px;
@@ -90,6 +95,12 @@
 
         @media (min-width: 769px) {
             #display-image {
+                display: block;
+            }
+            #form-nav {
+                box-shadow: 0 0 10px #c7c6c6;
+            }
+            .logo {
                 display: block;
             }
         }
